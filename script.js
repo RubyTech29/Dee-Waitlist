@@ -63,7 +63,13 @@ form.addEventListener("submit", async (event) => {
     label.textContent = "RESERVE MY PLACE";
   }
 });
+const heroArt = document.querySelector(".hero-art");
 
+if (heroArt) {
+  setInterval(() => {
+    heroArt.classList.toggle("show-back");
+  }, 4000);
+}
 document.querySelector("#join-another").addEventListener("click", () => {
   successPanel.hidden = true;
   form.hidden = false;

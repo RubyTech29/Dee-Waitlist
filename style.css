@@ -17,7 +17,15 @@ body { margin: 0; color: var(--deep); background: var(--cream); font-family: var
 body::selection { background: var(--gold); color: white; }
 .grain { position: fixed; inset: 0; pointer-events: none; z-index: 5; opacity: .09; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E"); }
 a { color: inherit; text-decoration: none; }
-.topbar { min-height: 96px; display: flex; justify-content: space-between; align-items: center; padding: 24px 7.2%; border-bottom: 1px solid var(--line); position: relative; z-index: 2; }
+.topbar { min-height: 96px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 24px 7.2%; 
+  border-bottom: 1px solid var(--line); 
+  position: relative; 
+  /* position:fixed; */
+  z-index: 2; }
 .wordmark { display: inline-flex; flex-direction: row; justify-content: center; align-items: center; gap: 5px; }
 .wordmark img{
   height: 10px;
@@ -26,7 +34,16 @@ a { color: inherit; text-decoration: none; }
 .wordmark-main { font-size: 21px; letter-spacing: .18em; font-weight: 700; }
 .wordmark-main i { font-style: normal; font-weight: 400; }
 .wordmark-sub { font-size: 8px; letter-spacing: .24em; color: var(--muted); }
-.launch-pill { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 99px; padding: 11px 15px; font-size: 9px; letter-spacing: .14em; color: var(--brown); }
+.launch-pill { display: flex;
+   align-items: center; 
+   gap: 10px; 
+   border: 1px solid var(--line); 
+   border-radius: 99px; 
+   padding: 20px 25px; font-size: 15px; 
+   letter-spacing: .14em; 
+   background-color: var(--brown); 
+   color: var(--cream);
+  }
 .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: #8a9b70; box-shadow: 0 0 0 4px rgba(138,155,112,.15); animation: pulse 2s infinite; }
 .hero { min-height: 660px; padding: 78px 10% 88px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 5%; align-items: center; max-width: 1500px; margin: auto; }
 .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--gold); font-size: 9px; font-weight: 700; letter-spacing: .2em; }
@@ -41,11 +58,11 @@ h1 em, h2 em, .closing-note em { font-weight: 500; color: var(--tan); }
 .text-link { display: inline-flex; align-items: center; gap: 28px; border: 0; padding: 0 0 9px; background: transparent; border-bottom: 1px solid var(--gold); font: 700 10px var(--sans); letter-spacing: .14em; cursor: pointer; }
 .text-link span { font-size: 16px; color: var(--gold); transition: transform .25s; }
 .text-link:hover span { transform: translate(4px,-3px); }
-.hero-art { height: 480px; position: relative; display: grid; place-items: center; perspective: 1000px; }
+ .hero-art { height: 480px; position: relative; display: grid; place-items: center; perspective: 1000px; }
 .art-orbit { position: absolute; border: 1px solid rgba(181,139,82,.3); border-radius: 50%; transform: rotate(-24deg); }
 .orbit-one { width: 430px; height: 310px; }
 .orbit-two { width: 350px; height: 450px; transform: rotate(33deg); }
-.art-card { position: absolute; width: 270px; height: 370px; box-shadow: 0 22px 60px rgba(67,45,27,.13); }
+.art-card { position: absolute; width: 370px; height: 430px; box-shadow: 0 22px 60px rgba(67,45,27,.13); }
 .card-back { background: #c8b198; transform: translate(37px,-6px) rotate(8deg); overflow: hidden; }
 .fabric-shape { position: absolute; width: 220px; height: 320px; top: 40px; left: 26px; background: linear-gradient(125deg,#8a6d52,#d9c4aa 36%,#8c7158 58%,#c5a889); clip-path: polygon(25% 0,75% 0,100% 23%,84% 100%,16% 100%,0 23%); opacity: .9; }
 .card-stamp { position: absolute; z-index: 1; top: 15px; left: 17px; font-size: 8px; letter-spacing: .15em; color: #fff8ee; }
@@ -65,6 +82,159 @@ h1 em, h2 em, .closing-note em { font-weight: 500; color: var(--tan); }
 .floating-note { position: absolute; z-index: 2; font-size: 8px; letter-spacing: .18em; color: var(--brown); background: var(--cream); padding: 11px 13px; box-shadow: 0 8px 22px #4b352011; }
 .note-top { top: 48px; right: 0; transform: rotate(5deg); animation: float 5s ease-in-out infinite; }
 .note-bottom { bottom: 42px; left: 0; transform: rotate(-5deg); animation: float 6s ease-in-out infinite reverse; }
+.hero-art.show-back .card-back {
+  transform: translate(-20px, 8px) rotate(-5deg);
+  z-index: 2;
+  box-shadow: 0 30px 70px rgba(67, 45, 27, 0.2);
+  transition: ease-in-out;
+}
+
+.hero-art.show-back .card-front {
+  transform: translate(37px, -6px) rotate(8deg);
+  z-index: 1;
+  transition: ease-in-out;
+}
+.card-back-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+} 
+*************
+/* Card container */
+/* .art-card {
+  position: absolute;
+  width: 270px;
+  height: 370px;
+  box-shadow: 0 22px 60px rgba(67, 45, 27, 0.13);
+  transition:
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1s ease,
+    box-shadow 1s ease;
+  backface-visibility: hidden;
+  will-change: transform;
+} */
+
+/* BACK CARD — initially behind */
+/* .card-back {
+  background: #c8b198;
+  transform: translate(37px, -6px) rotate(8deg);
+  overflow: hidden;
+  z-index: 1;
+} */
+
+/* Image inside the back card */
+/* .card-back-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+} */
+
+/* Subtle overlay so the text remains readable */
+/* .card-back::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(45, 30, 20, 0.12),
+    transparent 35%,
+    transparent 65%,
+    rgba(45, 30, 20, 0.35)
+  );
+  pointer-events: none;
+} */
+
+/* Keep back-card labels above the image and overlay */
+/* .card-stamp,
+.card-caption {
+  position: absolute;
+  z-index: 2;
+  color: #fff8ee;
+}
+
+.card-stamp {
+  top: 15px;
+  left: 17px;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.card-caption {
+  bottom: 16px;
+  left: 17px;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+} */
+
+/* FRONT CARD — initially in front */
+/* .card-front {
+  padding: 23px;
+  color: var(--brown);
+  background: var(--paper);
+  transform: translate(-20px, 8px) rotate(-5deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+} */
+
+/* Make the cards switch positions */
+/* .hero-art.show-back .card-back {
+  transform: translate(-20px, 8px) rotate(-5deg);
+  z-index: 2;
+  box-shadow: 0 30px 70px rgba(67, 45, 27, 0.2);
+}
+
+.hero-art.show-back .card-front {
+  transform: translate(37px, -6px) rotate(8deg);
+  z-index: 1;
+} */
+
+/* Existing front-card content */
+/* .art-topline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 6px;
+  letter-spacing: 0.1em;
+}
+
+.monogram {
+  margin-top: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.monogram img {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+
+.art-rule {
+  width: 53px;
+  height: 1px;
+  background: var(--gold);
+  margin: 5px 0 18px;
+}
+
+.card-front p {
+  font: 24px/1.15 var(--serif);
+  text-align: center;
+  margin: 0;
+}
+
+.card-front p em {
+  color: var(--tan);
+} */
+************
 .ticker { overflow: hidden; padding: 19px 0; background: var(--brown); color: #f8efe4; white-space: nowrap; }
 .ticker-track { display: flex; align-items: center; justify-content: flex-start; gap: 27px; width: max-content; animation: ticker 32s linear infinite; font-size: 9px; letter-spacing: .2em; }
 .ticker b { color: var(--tan); font-size: 14px; }
@@ -144,4 +314,18 @@ input::placeholder { color: #b0a398; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+@media (max-width: 650px) {
+  .art-card {
+    width: 235px;
+    height: 330px;
+  }
+
+  .hero-art.show-back .card-back {
+    transform: translate(-20px, 8px) rotate(-5deg);
+  }
+
+  .hero-art.show-back .card-front {
+    transform: translate(37px, -6px) rotate(8deg);
+  }
 }
