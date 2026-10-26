@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4eee5">
+  <meta name="description" content="Be first in line for Dee's Studio — personalised pieces, thoughtful details, made to stand out. Join the early-access waitlist.">
+  <title>Dee's Studio Waitlist </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="wordmark" href="#" aria-label="Dee's Studio home">
+      <img src="" alt="">
+      <span class="wordmark-main">DEE'S <i>STUDIO</i></span>
+    </a>
+    <span class="launch-pill"><span class="pulse-dot"></span> THE NEXT CHAPTER IS NEAR</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"> YOUR EARLY ACCESS STARTS HERE</p>
+        <h1>Made personal.<br><em>Made unforgettable.</em></h1>
+        <p class="intro">Your style, your story, your signature. Dee's Studio is preparing a new home for custom pieces and thoughtful details. Get on the list and be among the first to experience it.</p>
+        <div class="benefits">
+          <div><span class="benefit-icon">✳</span><span>First access to the launch</span></div>
+          <div><span class="benefit-icon">✳</span><span>New collections & custom creations</span></div>
+          <div><span class="benefit-icon">✳</span><span>Launch updates, straight to you</span></div>
+        </div>
+        <a class="text-link" href="#waitlist">SAVE MY PLACE <span>↗</span></a>
+      </div>
+
+      <div class="hero-art reveal" aria-label="Editorial fashion-inspired composition">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-card card-back">
+          <span class="card-stamp">DS</span>
+          <div class="fabric-shape"></div>
+          <span class="card-caption">A PERSONAL TOUCH</span>
+        </div>
+        <div class="art-card card-front">
+          <div class="art-topline"><span>FASHION STUDIO</span></div>
+          <!-- <div class="monogram">D<span>S</span></div> -->
+          <div class="monogram"><img src="./images/IMG-20260610-WA0024-removebg-preview.png" width="50%" alt=""></div>
+          <div class="art-rule"></div>
+          <p>Details that<br><em>feel like you.</em></p>
+        </div>
+        <span class="floating-note note-top">MADE FOR YOU ✳</span>
+        <span class="floating-note note-bottom">THE WAIT IS WORTH IT</span>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Studio services">
+      <div class="ticker-track">
+        <span>CUSTOM PIECES</span><b>✳</b><span>EMBROIDERY</span><b>✳</b><span>VINYL & RHINESTONE</span><b>✳</b><span>PERSONALISED GIFTS</span><b>✳</b><span>BRANDING DETAILS</span><b>✳</b>
+        <span>CUSTOM PIECES</span><b>✳</b><span>EMBROIDERY</span><b>✳</b><span>VINYL & RHINESTONE</span><b>✳</b><span>PERSONALISED GIFTS</span><b>✳</b><span>BRANDING DETAILS</span><b>✳</b>
+      </div>
+    </section>
+
+    <section class="waitlist-section" id="waitlist">
+      <div class="waitlist-aside reveal">
+        <p class="eyebrow"> A LITTLE SOMETHING SPECIAL</p>
+        <h2>Be there<br>from <em>the beginning.</em></h2>
+        <p>Join the early-access list. We'll let you know when Dee's Studio opens its doors.</p>
+        <div class="aside-signature">With love, <span>Dee's Studio</span></div>
+      </div>
+
+      <div class="form-panel reveal">
+        <div class="form-heading">
+          <span class="form-index">EARLY ACCESS</span>
+          <h3>Join the waitlist</h3>
+          <p>Leave your details below to reserve your place.</p>
+        </div>
+        <form id="waitlist-form" novalidate>
+          <label for="fullName">Full name <span>*</span></label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Your name" maxlength="100" required>
+
+          <label for="email">Email address <span>*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+
+          <label for="phone">Phone number <span>*</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+234 800 000 0000" maxlength="30" required>
+          <p class="field-hint">Include your country code where possible.</p>
+
+          <label class="consent">
+            <input id="consent" name="consent" type="checkbox" required>
+            <span>I agree to receive Dee's Studio launch news and early-access updates. I can unsubscribe from marketing messages at any time.</span>
+          </label>
+
+          <button class="submit-button" id="submit-button" type="submit">
+            <span class="button-label">RESERVE MY PLACE</span><span class="button-arrow">↗</span>
+          </button>
+          <p class="privacy-note"><span>✦</span> Your details stay private and are used to manage the waitlist.</p>
+          <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+        </form>
+        <div class="success-panel" id="success-panel" hidden>
+          <span class="success-symbol">✓</span>
+          <h3>You're on the list.</h3>
+          <p>Thank you for making room for Dee's Studio. Keep an eye on your inbox for launch news.</p>
+          <button type="button" id="join-another" class="text-link">REGISTER ANOTHER PERSON ↗</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-note">
+      <span class="closing-star">✳</span>
+      <p>Not just an item. <em>A piece of your story.</em></p>
+      <span class="closing-caption">DEE'S STUDIO — COMING SOON</span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer-brand" href="#">DEE'S STUDIO</a>
+    <span>Personalised with purpose.</span>
+    <a href="mailto:deestudio287@gmail.com">CONTACT THE STUDIO ↗</a>
+    <small>© <span id="year"></span> Dee's Studio. All rights reserved.</small>
+  </footer>
+</body>
+</html>
