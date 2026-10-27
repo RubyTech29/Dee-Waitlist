@@ -422,4 +422,36 @@ input::placeholder { color: #b0a398; }
   .hero-art.show-back .card-front {
     transform: translate(37px, -6px) rotate(8deg);
   }
+  .about-card{
+    height: 100%;
+    width: 90%;
+  }
+  .about-tag{
+    padding: 10px 5px;
+    width: 60%;
+  }
+  .about-card span{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .about-card p{
+    line-height: 1.2em;
+  }
+  .about-owner{
+    height: 50px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 20px;
+  }
+  .owner-img{
+    font-size: 1.7rem;
+  }
+  .owner-texts{
+    display: flex;
+    flex-direction: column;
+  }
+  .name{
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
 }
