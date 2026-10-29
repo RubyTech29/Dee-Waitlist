@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     emailjs.init({
-      publicKey: "RyihkwNU-b3OfX_X3"
+      publicKey: "OBEX2L9TP6ISvgjYg"
     });
   
     // Waitlist submission
@@ -90,10 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
   
       try {
         await emailjs.send(
-          "service_zz49eyg",
-          "template_6nslp3p",
+          "service_68279gi",
+          "template_fow8ko3",
           {
-            to_email: "taleatemmanuel@gmail.com",
+            to_email: "deestudio287@gmail.com",
             full_name: fullName,
             customer_email: email,
             phone_number: phone,
